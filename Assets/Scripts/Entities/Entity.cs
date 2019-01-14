@@ -75,9 +75,12 @@ public class Entity : MonoBehaviour
 
     public bool OnGround()
     {
-        return Physics.Linecast(transform.position, Vector3.down * 2);
+        RaycastHit Hit;
+        return Physics.Raycast(transform.position, Vector3.down, out Hit, 1.2f);
     }
 
-
-
+    public float GetSpeed()
+    {
+        return MovementSpeed;
+    }
 }
