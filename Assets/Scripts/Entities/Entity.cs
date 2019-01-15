@@ -16,6 +16,8 @@ public class Entity : MonoBehaviour
 
     private Rigidbody Rigid;
 
+    private Ability Attack;
+
 
     ///  Health Timer stuffs
     public bool CanRegen;
@@ -34,12 +36,14 @@ public class Entity : MonoBehaviour
         MovementSpeed = MaxSpeed;
 
         Rigid = GetComponent<Rigidbody>();
+
+        Attack = GetComponent<Ability>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (CanRegen)
+        if (CanRegen && !Dead)
         {
             if (StartHealthTimer)
             {
@@ -57,6 +61,15 @@ public class Entity : MonoBehaviour
 	}
 
 
+    private void UseAttack()
+    {
+        if (Attack.AbilityUp())
+        {
+            Attack.Cast();
+        }
+    }
+
+
     public void TakeDamage()
     {
         Health -= 50.0f;
@@ -67,7 +80,7 @@ public class Entity : MonoBehaviour
 
         if (Health <= 0.0f)
         {
-            Dead = false;
+            Dead = true;
 
             // Play Death sound
         }

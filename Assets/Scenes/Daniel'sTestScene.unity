@@ -220,7 +220,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f6a6e29062d62da4b99ef071a9f834fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -583,6 +583,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be00f3a70d7a0f04c9c86c3374648679, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &876140717 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1855105104549904, guid: be00f3a70d7a0f04c9c86c3374648679,
+    type: 2}
+  m_PrefabInternal: {fileID: 876140716}
+--- !u!114 &876140718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876140717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f115be457316d674cbdd399439127e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 2
+  StartOnCooldown: 0
 --- !u!1001 &1051756178
 Prefab:
   m_ObjectHideFlags: 0
