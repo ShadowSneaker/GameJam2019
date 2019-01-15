@@ -8,29 +8,36 @@ ModelImporter:
     100004: Handle_Left
     100006: Handle_Right
     100008: //RootNode
+    100010: Collider
     400000: Door_Left4
     400002: Door_Right
     400004: Handle_Left
     400006: Handle_Right
     400008: //RootNode
+    400010: Collider
     2100000: lambert1
+    2100002: lambert2
     2300000: Door_Left4
     2300002: Door_Right
     2300004: Handle_Left
     2300006: Handle_Right
     2300008: //RootNode
+    2300010: Collider
     3300000: Door_Left4
     3300002: Door_Right
     3300004: Handle_Left
     3300006: Handle_Right
     3300008: //RootNode
+    3300010: Collider
     4300000: SM_Dungeon_Door
     4300002: Door_Right
     4300004: Handle_Right
     4300006: Door_Left4
     4300008: Handle_Left
-    7400000: Take 001
+    4300010: Collider
+    7400000: Dungeon Door Anim
     9500000: //RootNode
+    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -58,7 +65,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dungeon Door Anim
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -106,7 +141,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
