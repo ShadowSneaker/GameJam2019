@@ -18,6 +18,8 @@ public class Entity : MonoBehaviour
 
 
     ///  Health Timer stuffs
+    public bool CanRegen;
+    public float RegenStrength = 2.0f;
     private bool StartHealthTimer;
     private float HealthTimer;
     public float MaxHealthTimer;
@@ -37,15 +39,19 @@ public class Entity : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (StartHealthTimer)
+        if (CanRegen)
         {
-            if (HealthTimer > 0.0f)
+            if (StartHealthTimer)
             {
-                HealthTimer -= Time.deltaTime;
-            }
-            else
-            {
-                StartHealthTimer = false;
+                if (Health < MaxHealth)
+                {
+                    Health = Mathf.Lerp(Health, MaxHealth, RegenStrength * Time.deltaTime);
+                }
+                else
+                {
+                    Health = MaxHealth;
+                    StartHealthTimer = false;
+                }
             }
         }
 	}
