@@ -5,15 +5,24 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: Trap_Door
+    100004: Floor
+    100006: TrapDoor
     400000: //RootNode
     400002: Trap_Door
+    400004: Floor
+    400006: TrapDoor
     2100000: lambert1
     2300000: //RootNode
     2300002: Trap_Door
+    2300004: Floor
+    2300006: TrapDoor
     3300000: //RootNode
     3300002: Trap_Door
+    3300004: Floor
+    3300006: TrapDoor
     4300000: Floor
     4300002: Trap_Door
+    4300004: TrapDoor
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}

@@ -573,7 +573,12 @@ Prefab:
     - target: {fileID: 114299338118569134, guid: be00f3a70d7a0f04c9c86c3374648679,
         type: 2}
       propertyPath: RegenStrength
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114299338118569134, guid: be00f3a70d7a0f04c9c86c3374648679,
+        type: 2}
+      propertyPath: HealthRegenDelay
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be00f3a70d7a0f04c9c86c3374648679, type: 2}
