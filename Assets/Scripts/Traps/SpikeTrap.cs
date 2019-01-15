@@ -10,10 +10,10 @@ public class SpikeTrap : MonoBehaviour
 
     private void OnCollisionEnter(Collision Col)
     {
-        if(Col.gameObject.CompareTag("Player"))
+        Entity Other = Col.gameObject.GetComponent<Entity>();
+        if(Other)
         {
-        
-            Col.gameObject.GetComponent<Entity>().TakeDamage();
+            Other.TakeDamage();
         }
     }
 

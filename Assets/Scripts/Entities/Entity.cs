@@ -16,6 +16,14 @@ public class Entity : MonoBehaviour
 
     private Rigidbody Rigid;
 
+
+    ///  Health Timer stuffs
+    private bool StartHealthTimer;
+    private float HealthTimer;
+    public float MaxHealthTimer;
+
+    public float HealthRegenDelay = 2.0f;
+
     
 	// Use this for initialization
 	void Start ()
@@ -29,13 +37,27 @@ public class Entity : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
+        if (StartHealthTimer)
+        {
+            if (HealthTimer > 0.0f)
+            {
+                HealthTimer -= Time.deltaTime;
+            }
+            else
+            {
+                StartHealthTimer = false;
+            }
+        }
 	}
 
 
     public void TakeDamage()
     {
         Health -= 50.0f;
+
+        StopCoroutine(HealthRegen());
+        StartHealthTimer = false;
+        HealthTimer = MaxHealthTimer;
 
         if (Health <= 0.0f)
         {
@@ -46,12 +68,19 @@ public class Entity : MonoBehaviour
         else
         {
             // Play hurt sound
-            
+            StartCoroutine(HealthRegen());
         }
 
         float SpeedMultiplier;
         SpeedMultiplier = Mathf.Clamp(Health, 0.5f, 1);
         MovementSpeed = MaxSpeed * SpeedMultiplier;
+    }
+
+
+    private IEnumerator HealthRegen()
+    {
+        yield return new WaitForSeconds(HealthRegenDelay);
+        StartHealthTimer = true;
     }
 
 
@@ -82,5 +111,10 @@ public class Entity : MonoBehaviour
     public float GetSpeed()
     {
         return MovementSpeed;
+    }
+
+    public float GetHealth()
+    {
+        return Health;
     }
 }

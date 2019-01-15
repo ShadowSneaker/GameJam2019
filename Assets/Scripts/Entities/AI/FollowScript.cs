@@ -7,12 +7,12 @@ public class FollowScript : MonoBehaviour
 {
     public Transform FollowObject;
 
-    private NavMeshAgent Nav;
-    private Entity This;
+    protected NavMeshAgent Nav;
+    protected Entity This;
 
 
 	// Use this for initialization
-	void Start ()
+	protected virtual void Start ()
     {
         This = GetComponent<Entity>();
         Nav = GetComponent<NavMeshAgent>();
@@ -21,8 +21,11 @@ public class FollowScript : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
-        Nav.destination = FollowObject.position;
+        if (FollowObject)
+        {
+            Nav.destination = FollowObject.position;
+        }
 	}
 }
