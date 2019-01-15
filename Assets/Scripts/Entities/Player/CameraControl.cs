@@ -17,6 +17,8 @@ public class CameraControl : MonoBehaviour
     public float minimumY = -60F;
     public float maximumY = 60F;
 
+    public Transform Cam;
+
     float rotationX = 0F;
     float rotationY = 0F;
 
@@ -29,6 +31,7 @@ public class CameraControl : MonoBehaviour
     public float frameCounter = 20;
 
     Quaternion originalRotation;
+    Quaternion CamOriginalRotation;
 
     void Update()
     {
@@ -70,7 +73,9 @@ public class CameraControl : MonoBehaviour
             Quaternion yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
             Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
 
-            transform.localRotation = originalRotation * xQuaternion * yQuaternion;
+            transform.localRotation = originalRotation * xQuaternion;
+            Cam.localRotation = CamOriginalRotation * yQuaternion;
+            //transform.localRotation = originalRotation * xQuaternion * yQuaternion;
         }
         else if (axes == RotationAxes.MouseX)
         {
@@ -126,6 +131,7 @@ public class CameraControl : MonoBehaviour
         if (rb)
             rb.freezeRotation = true;
         originalRotation = transform.localRotation;
+        CamOriginalRotation = Cam.localRotation;
     }
 
     public static float ClampAngle(float angle, float min, float max)

@@ -1,43 +1,14 @@
 fileFormatVersion: 2
-guid: 85e0080684ff28d42be7cab85649882e
+guid: 4135b98ba75efd241aa7727da520e46f
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Trap_Door
-    100004: Floor
-    100006: TrapDoor
-    100008: Trapdoor
-    100010: Frame_Collider
     400000: //RootNode
-    400002: Trap_Door
-    400004: Floor
-    400006: TrapDoor
-    400008: Trapdoor
-    400010: Frame_Collider
     2100000: lambert1
-    2100002: lambert5
     2300000: //RootNode
-    2300002: Trap_Door
-    2300004: Floor
-    2300006: TrapDoor
-    2300008: Trapdoor
-    2300010: Frame_Collider
     3300000: //RootNode
-    3300002: Trap_Door
-    3300004: Floor
-    3300006: TrapDoor
-    3300008: Trapdoor
-    3300010: Frame_Collider
-    4300000: Floor
-    4300002: Trap_Door
-    4300004: TrapDoor
-    4300006: Frame
-    4300008: Trapdoor
-    4300010: Frame_Collider
-    7400000: TrapDoorOpen
-    9500000: //RootNode
-    11100000: //RootNode
+    4300000: FloorBaseTile
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -65,35 +36,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: TrapDoorOpen
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 100
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -141,7 +84,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

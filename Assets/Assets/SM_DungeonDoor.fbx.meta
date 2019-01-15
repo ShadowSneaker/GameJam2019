@@ -17,6 +17,8 @@ ModelImporter:
     400010: Collider
     2100000: lambert1
     2100002: lambert2
+    2100004: lambert3
+    2100006: lambert4
     2300000: Door_Left4
     2300002: Door_Right
     2300004: Handle_Left
