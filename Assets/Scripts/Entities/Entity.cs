@@ -18,6 +18,8 @@ public class Entity : MonoBehaviour
 
     private Ability Attack;
 
+    private bool StartRotate = true;
+
     //set to one for no effect and only changed in traps;
     public float SpeedModifier = 1;
 
@@ -30,7 +32,7 @@ public class Entity : MonoBehaviour
 
     public float HealthRegenDelay = 2.0f;
 
-    
+
 	// Use this for initialization
 	void Start ()
     {
@@ -61,6 +63,26 @@ public class Entity : MonoBehaviour
             }
         }
 	}
+
+
+    private void FixedUpdate()
+    {
+        //if (StartRotate)
+        //{
+        //    RaycastHit Hit;
+        //    if (Physics.Raycast(transform.position, -Vector3.up, out Hit))
+        //    {
+        //
+        //
+        //        transform.rotation = Quaternion.FromToRotation(Vector3.right, Hit.normal);
+        //        float DistanceToGround = Hit.distance;
+        //        if (DistanceToGround > 2.2f)
+        //        {
+        //            Rigid.AddForce(-Vector3.up * 9.81f);
+        //        }
+        //    }
+        //}
+    }
 
 
     private void UseAttack()
@@ -107,8 +129,32 @@ public class Entity : MonoBehaviour
 
     public void Move(Vector3 MoveDir)
     {
-        Vector3 Vec;
-        Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+        Vector3 Vec = Vector3.zero;
+        if (Physics.gravity.x > 0.0f || Physics.gravity.x < 0.0f)
+        {
+            // Gravity along X
+            Vec = new Vector3(Rigid.velocity.x, MoveDir.y * MovementSpeed, MoveDir.z * MovementSpeed);
+        }
+        else if (Physics.gravity.y > 0.0f || Physics.gravity.y < 0.0f)
+        {
+            Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+
+        }
+        else if (Physics.gravity.z > 0.0f || Physics.gravity.z < 0.0f)
+        {
+            Vec = new Vector3(MoveDir.x * MovementSpeed, MoveDir.y * MovementSpeed, Rigid.velocity.z);
+
+        }
+
+        //Vector3 Vec;
+        //Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+
+
+
+        //Vec.x = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed).x; 
+        //Vec.x = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed).y; 
+        //Vec.x = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed).z; 
+        //Vec = transform.TransformDirection(Vec);
         Rigid.velocity = Vec * SpeedModifier;
 
     }
@@ -125,8 +171,8 @@ public class Entity : MonoBehaviour
 
     public bool OnGround()
     {
-        RaycastHit Hit;
-        return Physics.Raycast(transform.position, Vector3.down, out Hit, 1.2f);
+        RaycastHit HitInfo;
+        return Physics.Raycast(transform.position, Vector3.down, out HitInfo, 1.2f);
     }
 
     public float GetSpeed()

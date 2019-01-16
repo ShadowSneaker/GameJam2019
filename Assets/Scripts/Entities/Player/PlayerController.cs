@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     {
         //if (This.OnGround())
         //{
+        //MoveDir.x = Input.GetAxis("Horizontal");
+        //MoveDir.z = Input.GetAxis("Vertical");
+
             MoveDir = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             MoveDir = transform.TransformDirection(MoveDir);
 
