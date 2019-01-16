@@ -30,13 +30,16 @@ public class CameraControl : MonoBehaviour
 
     public float frameCounter = 20;
 
-    Quaternion originalRotation;
-    Quaternion CamOriginalRotation;
+    internal Quaternion originalRotation;
+    internal Quaternion CamOriginalRotation;
 
-    void Update()
+    void FixedUpdate()
     {
         if (axes == RotationAxes.MouseXAndY)
         {
+            //originalRotation = transform.localRotation;
+            //CamOriginalRotation = Cam.localRotation;
+
             rotAverageY = 0f;
             rotAverageX = 0f;
 

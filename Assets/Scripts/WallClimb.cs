@@ -19,23 +19,25 @@ public class WallClimb : MonoBehaviour
 
     private Vector3 OrigionalRotaion;
 
+    private CameraControl Cam;
+
     private void Update()
     {
-        if (Play)
-        { 
-            if (Forward && Player)
+        if (Play && Player)
+        {
+            
+            if (Forward)
             {
                 float Percent = Vector3.Distance(Player.transform.position, Point2.position) / Vector3.Distance(Point1.position, Point2.position);
                 Physics.gravity = Vector3.Lerp(Gravity1, Gravity2, Percent);
-                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion + Rotation, OrigionalRotaion + -Rotation, Percent));
-                //Player.transform.rotation.SetEulerRotation(Vector3.Lerp(Rotation1, Rotation2, Percent));
+                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + -Rotation, Percent));
                 
             }
             else
             {
                 float Percent = Vector3.Distance(Player.transform.position, Point1.position) / Vector3.Distance(Point2.position, Point1.position);
                 Physics.gravity = Vector3.Lerp(Gravity2, Gravity1, Percent);
-                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion + - Rotation, OrigionalRotaion + Rotation, Percent));
+                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + Rotation, Percent));
             }
         }
     }
@@ -65,6 +67,9 @@ public class WallClimb : MonoBehaviour
             Player = other.transform;
             OrigionalRotaion = Player.transform.rotation.eulerAngles;
 
+            Cam = Player.GetComponent<CameraControl>();
+
+
             float Dist1 = Vector3.Distance(other.transform.position, Point1.position);
             float Dist2 = Vector3.Distance(other.transform.position, Point2.position);
 
@@ -90,8 +95,10 @@ public class WallClimb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Player = null;
-            Play = false;
+            Cam.originalRotation = Player.transform.localRotation;
+            //Cam.CamOriginalRotation = Cam.transform.localRotation;
+            //Play = false;
+            //Player = null;
         }
     }
 }
