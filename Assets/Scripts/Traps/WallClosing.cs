@@ -5,31 +5,18 @@ using UnityEngine;
 public class WallClosing : MonoBehaviour
 {
 
-    public GameObject Wall1;
-    public GameObject Wall2;
+    public bool WallsMoving;
 
-    private bool TriggerHit;
-
-    public float MovingSpeed;
-
-	void Update ()
+    private void OnCollisionEnter(Collision collision)
     {
-		if(TriggerHit)
+        Entity Other = collision.gameObject.GetComponent<Entity>();
+        if(Other)
         {
-            float speed = MovingSpeed * Time.deltaTime;
-
-            Wall1.transform.position = Vector3.MoveTowards(Wall1.transform.position, Wall2.transform.position, speed);
-
-            Wall2.transform.position = Vector3.MoveTowards(Wall2.transform.position, Wall1.transform.position, speed);
-        }
-	}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            TriggerHit = true;
+            if (WallsMoving)
+            {
+                Other.TakeDamage();
+                Other.TakeDamage();
+            }
         }
     }
-
 }

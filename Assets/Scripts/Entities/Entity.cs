@@ -18,6 +18,8 @@ public class Entity : MonoBehaviour
 
     private Ability Attack;
 
+    //set to one for no effect and only changed in traps;
+    public float SpeedModifier = 1;
 
     ///  Health Timer stuffs
     public bool CanRegen;
@@ -107,7 +109,7 @@ public class Entity : MonoBehaviour
     {
         Vector3 Vec;
         Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
-        Rigid.velocity = Vec;
+        Rigid.velocity = Vec * SpeedModifier;
 
     }
 

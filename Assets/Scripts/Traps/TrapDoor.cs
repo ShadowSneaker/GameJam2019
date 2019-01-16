@@ -11,19 +11,10 @@ public class TrapDoor : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //TDoor.GetComponent<Animator>().SetBool("Open", true);
+
             TDoor.Play(TDoor.clip.name);
         }
     }
 
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.gameObject.CompareTag("Player"))
-    //    {
-    //        TDoor.GetComponent<Animator>().SetBool("Open", true);
-    //    }
-    //}
-
-
+    
 }
