@@ -1,21 +1,14 @@
 fileFormatVersion: 2
-guid: 950217f2b0b45544196c0261371a4cee
+guid: 6d438e8e119184f41aedd2cb5fd8f491
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Collider
-    100002: //RootNode
-    400000: Collider
-    400002: //RootNode
-    2100000: lambert1
-    2100002: lambert6
-    2300000: Collider
-    2300002: //RootNode
-    3300000: Collider
-    3300002: //RootNode
-    4300000: Stairs
-    4300002: Collider
-    2186277476908879412: ImportLogs
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert3
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: WallBaseCorner
   externalObjects: {}
   materials:
     importMaterials: 1

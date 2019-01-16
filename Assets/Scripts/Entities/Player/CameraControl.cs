@@ -132,7 +132,7 @@ public class CameraControl : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb)
-            rb.freezeRotation = true;
+            //rb.freezeRotation = true;
         originalRotation = transform.localRotation;
         CamOriginalRotation = Cam.localRotation;
     }

@@ -10,6 +10,7 @@ ModelImporter:
     400002: Handle_Front
     400004: //RootNode
     2100000: lambert1
+    2100002: Wood
     2300000: Handle_Back
     2300002: Handle_Front
     2300004: //RootNode

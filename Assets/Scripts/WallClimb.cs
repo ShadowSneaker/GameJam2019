@@ -7,19 +7,22 @@ public class WallClimb : MonoBehaviour
     public Transform Point1;
     public Transform Point2;
 
-    public Vector3 Gravity1;
-    public Vector3 Gravity2;
+    //public Vector3 Gravity1;
+    //public Vector3 Gravity2;
 
-    public Vector3 Rotation;
+    public Vector3 StartRotation;
+    public Vector3 EndRotation;
 
     private bool Forward;
-    private bool Play;
+    public bool Play;
 
     private Transform Player;
 
-    private Vector3 OrigionalRotaion;
+    private Vector3 OrigionalRotation;
 
-    private CameraControl Cam;
+    //private CameraControl Cam;
+
+    public Transform Map;
 
     private void Update()
     {
@@ -29,16 +32,20 @@ public class WallClimb : MonoBehaviour
             if (Forward)
             {
                 float Percent = Vector3.Distance(Player.transform.position, Point2.position) / Vector3.Distance(Point1.position, Point2.position);
-                Physics.gravity = Vector3.Lerp(Gravity1, Gravity2, Percent);
-                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + -Rotation, Percent));
+                //Physics.gravity = Vector3.Lerp(Gravity1, Gravity2, Percent);
+                //Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + -Rotation, Percent));
+                Map.rotation = Quaternion.Euler(Vector3.Lerp(StartRotation, EndRotation, Percent));
                 
             }
             else
             {
                 float Percent = Vector3.Distance(Player.transform.position, Point1.position) / Vector3.Distance(Point2.position, Point1.position);
-                Physics.gravity = Vector3.Lerp(Gravity2, Gravity1, Percent);
-                Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + Rotation, Percent));
+                //Physics.gravity = Vector3.Lerp(Gravity2, Gravity1, Percent);
+                //Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + Rotation, Percent));
+                Map.rotation = Quaternion.Euler(Vector3.Lerp(EndRotation, StartRotation, Percent));
+
             }
+            //OrigionalRotation = Map.rotation.eulerAngles;
         }
     }
 
@@ -65,9 +72,9 @@ public class WallClimb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Player = other.transform;
-            OrigionalRotaion = Player.transform.rotation.eulerAngles;
+            OrigionalRotation = Map.transform.rotation.eulerAngles;
 
-            Cam = Player.GetComponent<CameraControl>();
+            //Cam = Player.GetComponent<CameraControl>();
 
 
             float Dist1 = Vector3.Distance(other.transform.position, Point1.position);
@@ -95,10 +102,13 @@ public class WallClimb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Cam.originalRotation = Player.transform.localRotation;
+            //Cam.originalRotation = Player.transform.localRotation;
             //Cam.CamOriginalRotation = Cam.transform.localRotation;
-            //Play = false;
-            //Player = null;
+            Play = false;
+            Player = null;
+
+            //Physics.gravity = (Forward) ? Gravity1 : Gravity2;
+            Map.rotation = (Forward) ? Quaternion.Euler(EndRotation) : Quaternion.Euler(StartRotation);
         }
     }
 }

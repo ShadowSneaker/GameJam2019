@@ -17,6 +17,9 @@ ModelImporter:
     400010: Frame_Collider
     2100000: lambert1
     2100002: lambert5
+    2100004: Wood
+    2100006: Default_Material
+    2100008: Metal
     2300000: //RootNode
     2300002: Trap_Door
     2300004: Floor

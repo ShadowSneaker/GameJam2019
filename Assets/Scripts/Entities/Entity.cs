@@ -33,8 +33,20 @@ public class Entity : MonoBehaviour
     public float HealthRegenDelay = 2.0f;
 
 
-	// Use this for initialization
-	void Start ()
+    // Walking on wall angles
+    float AdjustSpeed = 5.0f;
+    private Quaternion FromRotation;
+    private Quaternion ToRotation;
+    private Vector3 TargetNormal;
+    RaycastHit Hit;
+    private float Weight = 1.0f;
+    CameraControl Cam;
+
+    public Transform RotateObj;
+
+
+    // Use this for initialization
+    void Start ()
     {
         Health = MaxHealth;
         MovementSpeed = MaxSpeed;
@@ -42,6 +54,8 @@ public class Entity : MonoBehaviour
         Rigid = GetComponent<Rigidbody>();
 
         Attack = GetComponent<Ability>();
+        TargetNormal = transform.up;
+        Cam = GetComponent<CameraControl>();
 	}
 	
 	// Update is called once per frame
@@ -65,24 +79,56 @@ public class Entity : MonoBehaviour
 	}
 
 
-    private void FixedUpdate()
-    {
-        //if (StartRotate)
-        //{
-        //    RaycastHit Hit;
-        //    if (Physics.Raycast(transform.position, -Vector3.up, out Hit))
-        //    {
-        //
-        //
-        //        transform.rotation = Quaternion.FromToRotation(Vector3.right, Hit.normal);
-        //        float DistanceToGround = Hit.distance;
-        //        if (DistanceToGround > 2.2f)
-        //        {
-        //            Rigid.AddForce(-Vector3.up * 9.81f);
-        //        }
-        //    }
-        //}
-    }
+    //private void FixedUpdate()
+    //{
+    //    if (StartRotate)
+    //    {
+            
+    //        if (Physics.Raycast(transform.position, -Vector3.up, out Hit))
+    //        {
+    //            if (Hit.normal == RotateObj.up) return;
+    //            if (Hit.normal != TargetNormal)
+    //            {
+    //                TargetNormal = Hit.normal;
+    //                FromRotation = RotateObj.rotation;
+    //                ToRotation = Quaternion.FromToRotation(Vector3.up, Hit.normal);
+
+    //                Debug.Log(FromRotation);
+    //                Debug.Log(ToRotation);
+
+    //                Weight = 0;
+    //            }
+    //            if (Weight <= 1.0f)
+    //            {
+    //                Weight += Time.deltaTime * AdjustSpeed;
+    //                RotateObj.rotation = Quaternion.Slerp(FromRotation, ToRotation, Weight);
+
+    //                Cam.originalRotation = RotateObj.localRotation;
+    //                Cam.CamOriginalRotation = Cam.transform.localRotation;
+    //            }
+
+
+    //            // Attempt 2
+    //            //if (Hit.normal == transform.up) return;
+    //            //
+    //            //transform.rotation = Quaternion.Euler(Vector3.Slerp(transform.up, Hit.normal, AdjustSpeed));
+
+
+    //            // Attempt 1
+    //            //float DistanceToGround = Hit.distance;
+    //            //
+    //            //if (Hit.normal == transform.up) return;
+    //            //
+    //            //NewUp = Vector3.RotateTowards(transform.up, Hit.normal, AdjustSpeed * Mathf.Deg2Rad, 0);
+    //            //transform.rotation = Quaternion.LookRotation(transform.forward, NewUp);
+                
+
+                
+
+
+    //        }
+    //    }
+    //}
 
 
     private void UseAttack()
@@ -129,25 +175,27 @@ public class Entity : MonoBehaviour
 
     public void Move(Vector3 MoveDir)
     {
-        Vector3 Vec = Vector3.zero;
-        if (Physics.gravity.x > 0.0f || Physics.gravity.x < 0.0f)
-        {
-            // Gravity along X
-            Vec = new Vector3(Rigid.velocity.x, MoveDir.y * MovementSpeed, MoveDir.z * MovementSpeed);
-        }
-        else if (Physics.gravity.y > 0.0f || Physics.gravity.y < 0.0f)
-        {
-            Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+        //Vector3 Vec = Vector3.zero;
+        //if (Physics.gravity.x > 0.0f || Physics.gravity.x < 0.0f)
+        //{
+        //    // Gravity along X
+        //    Vec = new Vector3(Rigid.velocity.x, MoveDir.y * MovementSpeed, MoveDir.z * MovementSpeed);
+        //}
+        //else if (Physics.gravity.y > 0.0f || Physics.gravity.y < 0.0f)
+        //{
+        //    // Gravity along Y
+        //    Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+        //
+        //}
+        //else if (Physics.gravity.z > 0.0f || Physics.gravity.z < 0.0f)
+        //{
+        //    // Gravity along Z
+        //    Vec = new Vector3(MoveDir.x * MovementSpeed, MoveDir.y * MovementSpeed, Rigid.velocity.z);
+        //
+        //}
 
-        }
-        else if (Physics.gravity.z > 0.0f || Physics.gravity.z < 0.0f)
-        {
-            Vec = new Vector3(MoveDir.x * MovementSpeed, MoveDir.y * MovementSpeed, Rigid.velocity.z);
-
-        }
-
-        //Vector3 Vec;
-        //Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
+        Vector3 Vec;
+        Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
 
 
 

@@ -9,74 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1196065727414632}
+  m_RootGameObject: {fileID: 1625448404021938}
   m_IsPrefabParent: 1
---- !u!1 &1098458375387330
+--- !u!1 &1625448404021938
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4633994880387080}
-  - component: {fileID: 64636904947297794}
+  - component: {fileID: 4207101581676250}
+  - component: {fileID: 33818798667819290}
+  - component: {fileID: 23575129794645362}
+  - component: {fileID: 65929108538735668}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: SM_RampWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1196065727414632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4591482092206956}
-  - component: {fileID: 33625554780881384}
-  - component: {fileID: 23922662398006030}
-  m_Layer: 0
-  m_Name: Stairs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4591482092206956
+--- !u!4 &4207101581676250
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196065727414632}
-  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 20, y: 2.5, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4633994880387080}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
---- !u!4 &4633994880387080
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098458375387330}
+  m_GameObject: {fileID: 1625448404021938}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0000005340576, y: 0, z: 0}
+  m_LocalPosition: {x: 47.988876, y: 24, z: -88.75114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4591482092206956}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23922662398006030
+--- !u!23 &23575129794645362
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196065727414632}
+  m_GameObject: {fileID: 1625448404021938}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,7 +57,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: 85e0080684ff28d42be7cab85649882e, type: 3}
+  - {fileID: 2100000, guid: eaa32626b6670d44db0336835c062989, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,24 +77,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33625554780881384
+--- !u!33 &33818798667819290
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196065727414632}
-  m_Mesh: {fileID: 4300000, guid: 950217f2b0b45544196c0261371a4cee, type: 3}
---- !u!64 &64636904947297794
-MeshCollider:
+  m_GameObject: {fileID: 1625448404021938}
+  m_Mesh: {fileID: 4300000, guid: eaa32626b6670d44db0336835c062989, type: 3}
+--- !u!65 &65929108538735668
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098458375387330}
+  m_GameObject: {fileID: 1625448404021938}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 950217f2b0b45544196c0261371a4cee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.19999999, y: 8, z: 8}
+  m_Center: {x: 0, y: 4, z: -4}
