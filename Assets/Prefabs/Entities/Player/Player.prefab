@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 114299338118569134}
   - component: {fileID: 114758753674852482}
   - component: {fileID: 114149680271060412}
+  - component: {fileID: 114121899077666228}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -219,6 +220,19 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1572256796168706}
   m_Enabled: 1
+--- !u!114 &114121899077666228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855105104549904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f115be457316d674cbdd399439127e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 2
+  StartOnCooldown: 0
 --- !u!114 &114149680271060412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +251,7 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+  Cam: {fileID: 4691785533420608}
   frameCounter: 2
 --- !u!114 &114171213393805976
 MonoBehaviour:
@@ -313,8 +328,10 @@ MonoBehaviour:
   MaxHealth: 100
   MaxSpeed: 5
   JumpStrength: 50
+  CanRegen: 1
+  RegenStrength: 1
   MaxHealthTimer: 0
-  HealthRegenDelay: 2
+  HealthRegenDelay: 5
 --- !u!114 &114299382031882780
 MonoBehaviour:
   m_ObjectHideFlags: 1
