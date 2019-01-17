@@ -1,32 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class InteractableObject : MonoBehaviour
 {
     public bool Active = true;
     public ActivatableObject[] ActivateObjects;
+    public UnityEvent EventObject;
+
     public string ScreenInfo;
 
-    // Use this for initialization
-    void Start ()
+    private Animation Anim;
+
+    private void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        Anim = GetComponent<Animation>();
+    }
 
 
-    public void Interact()
+    public virtual void Interact()
     {
-        Active = false;
-        for (int i = 0; i < ActivateObjects.Length; ++i)
+        if (Active)
         {
-            ActivateObjects[i].Activate();
+            Active = false;
+
+            if (Anim)
+            {
+                Anim.Play(Anim.clip.name);
+            }
+
+            for (int i = 0; i < ActivateObjects.Length; ++i)
+            {
+                ActivateObjects[i].Activate();
+            }
+            
+            
+            if (EventObject != null)
+            {
+                EventObject.Invoke();
+            }
         }
+    }
+
+
+    public void ActivateObject()
+    {
+        Active = true;
     }
 }

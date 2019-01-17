@@ -10,19 +10,7 @@ public class ActivatableObject : MonoBehaviour
 
     
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
-    public void Activate()
+    public virtual void Activate()
     {
         if (!Active)
         {
@@ -38,6 +26,5 @@ public class ActivatableObject : MonoBehaviour
 
     protected virtual void Activated()
     {
-        Debug.Log("Activated");
     }
 }
