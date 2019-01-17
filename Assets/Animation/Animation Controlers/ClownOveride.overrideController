@@ -7,4 +7,10 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: ClownOveride
   m_Controller: {fileID: 9100000, guid: fc7f115404695cc4bbd3cc6835512936, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95a4a90a56864c644a66b308962c08e5, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 95a4a90a56864c644a66b308962c08e5, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 6f95d04c9bc06f9479c94e95776d13c5, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 6f95d04c9bc06f9479c94e95776d13c5, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: accd506f1d742414eb86ae94a9f3d821, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: accd506f1d742414eb86ae94a9f3d821, type: 3}
