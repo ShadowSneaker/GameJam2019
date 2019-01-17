@@ -10,7 +10,7 @@ public class Player : Entity
     InteractableObject Active;
     CameraControl Cam;
 
-    //internal RespawnScript RespawnPoint;
+    internal Respawn RespawnPoint;
 
     public Text InteractText;
 
@@ -23,24 +23,25 @@ public class Player : Entity
 
     private void FixedUpdate()
     {
-        //Debug.DrawRay(Cam.Cam.transform.position, Cam.Cam.transform.forward, Color.red , 5.0f);
         if (Physics.Raycast(Cam.Cam.transform.position, Cam.Cam.transform.forward, out Hit, 2.0f))
         {
-            Debug.Log("Hit something");
             Active = Hit.transform.GetComponent<InteractableObject>();
             if (Active)
             {
-                Debug.Log("Hit Activate");
-                InteractText.enabled = true;
-                InteractText.text = Active.ScreenInfo;
 
                 if (Active.Active)
                 {
+                    InteractText.enabled = true;
+                    InteractText.text = Active.ScreenInfo;
                     if (Input.GetKeyDown("f"))
                     {
                         RespectsPayed();
                         Active.Interact();
                     }
+                }
+                else
+                {
+                    InteractText.enabled = false;
                 }
             }
             else
@@ -58,7 +59,7 @@ public class Player : Entity
 
     protected override void OnDeath()
     {
-        //RespawnPoint.RespawnPlayer();
+        RespawnPoint.RespawnPlayer();
     }
 
 

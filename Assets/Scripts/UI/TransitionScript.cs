@@ -38,4 +38,10 @@ public class TransitionScript : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene(LevelName);
     }
+
+
+    public void PlayTransition()
+    {
+        Anim.Play();
+    }
 }

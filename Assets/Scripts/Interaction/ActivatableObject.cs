@@ -38,6 +38,6 @@ public class ActivatableObject : MonoBehaviour
 
     protected virtual void Activated()
     {
-
+        Debug.Log("Activated");
     }
 }
