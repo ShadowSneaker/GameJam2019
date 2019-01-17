@@ -204,6 +204,9 @@ GameObject:
   - component: {fileID: 4685986357765630}
   - component: {fileID: 95660425762367384}
   - component: {fileID: 114693769461798762}
+  - component: {fileID: 136829860150198596}
+  - component: {fileID: 54327363521725390}
+  - component: {fileID: 114670404136887200}
   m_Layer: 0
   m_Name: ClownyBoi@Ninja Idle (1)
   m_TagString: Untagged
@@ -1792,7 +1795,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137643740020356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.027347, y: 0.20139328, z: -14.815132}
+  m_LocalPosition: {x: 6.922035, y: 0.5, z: -9.013261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4044868617948360}
@@ -2166,6 +2169,21 @@ Transform:
   m_Father: {fileID: 4365604536752584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54327363521725390
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137643740020356}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &95660425762367384
 Animator:
   serializedVersion: 3
@@ -2184,6 +2202,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114670404136887200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137643740020356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9c049197bf5894da75f067ccd808f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowObject: {fileID: 0}
 --- !u!114 &114693769461798762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2197,13 +2227,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioMan: {fileID: 0}
   MaxHealth: 100
-  MaxSpeed: 600
+  MaxSpeed: 4
   JumpStrength: 0
   SpeedModifier: 1
   CanRegen: 0
   RegenStrength: 2
   MaxHealthTimer: 0
   HealthRegenDelay: 2
+--- !u!136 &136829860150198596
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137643740020356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!137 &137018194926741216
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
