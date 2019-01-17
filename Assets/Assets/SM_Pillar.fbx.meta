@@ -23,6 +23,7 @@ ModelImporter:
     3300000: pCube3
     3300002: //RootNode
     4300000: pCube3
+    4300002: Pillar
   externalObjects:
   - first:
       type: UnityEngine:Material
