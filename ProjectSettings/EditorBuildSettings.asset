@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 9b016b604ee525f4994d5a928f6516eb
   - enabled: 1
-    path: Assets/Scenes/Daniel'sTestScene.unity
-    guid: e120b92dd93e76840b7c35b39959331f
+    path: Assets/Scenes/MindGames.unity
+    guid: 79208abdb57ab044baf0c3346cedcbbd
   m_configObjects: {}
