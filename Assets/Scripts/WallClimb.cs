@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallClimb : MonoBehaviour
 {
+    public Transform RotationPoint;
+
     public Transform Point1;
     public Transform Point2;
 
@@ -72,6 +74,7 @@ public class WallClimb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Player = other.transform;
+            Map.parent = RotationPoint;
             OrigionalRotation = Map.transform.rotation.eulerAngles;
 
             //Cam = Player.GetComponent<CameraControl>();
