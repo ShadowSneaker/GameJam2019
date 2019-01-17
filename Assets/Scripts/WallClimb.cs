@@ -36,7 +36,7 @@ public class WallClimb : MonoBehaviour
                 float Percent = Vector3.Distance(Player.transform.position, Point2.position) / Vector3.Distance(Point1.position, Point2.position);
                 //Physics.gravity = Vector3.Lerp(Gravity1, Gravity2, Percent);
                 //Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + -Rotation, Percent));
-                Map.rotation = Quaternion.Euler(Vector3.Lerp(StartRotation, EndRotation, Percent));
+                RotationPoint.rotation = Quaternion.Euler(Vector3.Lerp(StartRotation, EndRotation, Percent));
                 
             }
             else
@@ -44,7 +44,7 @@ public class WallClimb : MonoBehaviour
                 float Percent = Vector3.Distance(Player.transform.position, Point1.position) / Vector3.Distance(Point2.position, Point1.position);
                 //Physics.gravity = Vector3.Lerp(Gravity2, Gravity1, Percent);
                 //Player.transform.rotation = Quaternion.Euler(Vector3.Lerp(OrigionalRotaion, OrigionalRotaion + Rotation, Percent));
-                Map.rotation = Quaternion.Euler(Vector3.Lerp(EndRotation, StartRotation, Percent));
+                RotationPoint.rotation = Quaternion.Euler(Vector3.Lerp(EndRotation, StartRotation, Percent));
 
             }
             //OrigionalRotation = Map.rotation.eulerAngles;
@@ -74,8 +74,9 @@ public class WallClimb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Player = other.transform;
+            RotationPoint.parent = null;
             Map.parent = RotationPoint;
-            OrigionalRotation = Map.transform.rotation.eulerAngles;
+            OrigionalRotation = RotationPoint.rotation.eulerAngles;
 
             //Cam = Player.GetComponent<CameraControl>();
 
@@ -111,7 +112,11 @@ public class WallClimb : MonoBehaviour
             Player = null;
 
             //Physics.gravity = (Forward) ? Gravity1 : Gravity2;
-            Map.rotation = (Forward) ? Quaternion.Euler(EndRotation) : Quaternion.Euler(StartRotation);
+
+            RotationPoint.rotation = (Forward) ? Quaternion.Euler(EndRotation) : Quaternion.Euler(StartRotation);
+
+            Map.parent = null;
+            RotationPoint.parent = transform;
         }
     }
 }
