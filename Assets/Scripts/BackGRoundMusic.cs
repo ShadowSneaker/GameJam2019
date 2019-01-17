@@ -8,7 +8,7 @@ public class BackGRoundMusic : MonoBehaviour
     public AudioManager Audio;
 	
 	
-	void Update ()
+	void Start()
     {
         Audio.Play("CreepyMusic");	
 	}
