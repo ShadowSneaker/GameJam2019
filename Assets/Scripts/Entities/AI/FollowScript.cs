@@ -26,6 +26,7 @@ public class FollowScript : MonoBehaviour
         if (FollowObject)
         {
             Nav.destination = FollowObject.position;
+            This.AudioMan.Play("ChaseMusic");
         }
 	}
 }
