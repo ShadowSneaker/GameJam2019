@@ -11,7 +11,7 @@ public class TrapDoor : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
+            FindObjectOfType<AudioManager>().Play("TrapDoor");
             TDoor.Play(TDoor.clip.name);
         }
     }

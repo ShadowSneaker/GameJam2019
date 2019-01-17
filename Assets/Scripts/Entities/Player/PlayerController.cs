@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
             MoveDir = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             MoveDir = transform.TransformDirection(MoveDir);
+            
 
             if (Input.GetButton("Jump"))
             {

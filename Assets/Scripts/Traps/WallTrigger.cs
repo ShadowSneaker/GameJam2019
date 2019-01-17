@@ -24,6 +24,7 @@ public class WallTrigger : MonoBehaviour
             }
 
             BlockingWall.Play(BlockingWall.clip.name);
+            FindObjectOfType<AudioManager>().Play("CLosingWallSound");
        }
     }
 

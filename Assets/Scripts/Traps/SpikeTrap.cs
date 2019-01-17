@@ -13,6 +13,7 @@ public class SpikeTrap : MonoBehaviour
         Entity Other = Col.gameObject.GetComponent<Entity>();
         if(Other)
         {
+            FindObjectOfType<AudioManager>().Play("SpikeTrap");
             Other.TakeDamage();
         }
     }

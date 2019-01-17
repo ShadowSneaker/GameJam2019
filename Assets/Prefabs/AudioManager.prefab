@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577056125002210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 18.58729, y: 0.20139328, z: -16.735136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,27 +52,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: ChaseMusic
+    clip: {fileID: 8300000, guid: 9e4554f2d0392aa498c44a26694aa407, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: CLosingWallSound
+    clip: {fileID: 8300000, guid: 8515a223432a18349bf0b9fb46982241, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0.1
+  - name: ClownLaugh
+    clip: {fileID: 8300000, guid: fc61147f414356c44895316355d444af, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: CreepyMusic
+    clip: {fileID: 8300000, guid: 3f78c1d04a1751747880d79877e18ba7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: FireCrack
+    clip: {fileID: 8300000, guid: bb256a98c53b2604da0ec197a323e73d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FootSteps
+    clip: {fileID: 8300000, guid: 53518d0438bbbdf489a6c1f66057b104, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HurtGrunt
+    clip: {fileID: 8300000, guid: a4a0e2c5d23d54144ba8ab76737de8ff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LongArmManHeathyBreathing
+    clip: {fileID: 8300000, guid: 6cff0de56e7fd37458e26788db7bcbcf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Panting
+    clip: {fileID: 8300000, guid: 110fcffd7540e83429247ac0e2a7896b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RiplingWater
+    clip: {fileID: 8300000, guid: 7c4b933dee3fb944d99524d5abe35667, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpiderTaps
+    clip: {fileID: 8300000, guid: 74ae67f703c7d7e4e81abc2ca941e646, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpikeTrap
+    clip: {fileID: 8300000, guid: c1c4c84c5d9207149b46efaad037815a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TrapDoor
+    clip: {fileID: 8300000, guid: 96ce2fc25832f004a82eeecd2fcff450, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}

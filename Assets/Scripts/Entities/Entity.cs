@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+
+    public AudioManager AudioMan;
+
     public float MaxHealth = 100.0f;
     protected float Health;
 
@@ -91,7 +94,7 @@ public class Entity : MonoBehaviour
     public void TakeDamage()
     {
         Health -= 50.0f;
-
+        AudioMan.Play("HurtGrunt");
         StopCoroutine(HealthRegen());
         StartHealthTimer = false;
         HealthTimer = MaxHealthTimer;
@@ -132,7 +135,7 @@ public class Entity : MonoBehaviour
 
         Vector3 Vec;
         Vec = new Vector3(MoveDir.x * MovementSpeed, Rigid.velocity.y, MoveDir.z * MovementSpeed);
-        
+        AudioMan.Play("FootSteps");
         Rigid.velocity = Vec * SpeedModifier;
     }
 
@@ -161,4 +164,11 @@ public class Entity : MonoBehaviour
     {
         return Health;
     }
+
+    public void PlaySound(string sound)
+    {
+        Debug.Log("Function Called");
+        AudioMan.Play(sound);
+    }
+
 }

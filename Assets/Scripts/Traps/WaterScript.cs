@@ -14,6 +14,9 @@ public class WaterScript : MonoBehaviour {
         originalamount = Thing.SpeedModifier;
 
         Thing.SpeedModifier -= slowingamount;
+
+
+        FindObjectOfType<AudioManager>().Play("RiplingWater");
     }
 
     
@@ -21,7 +24,7 @@ public class WaterScript : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
         Entity Thing = other.gameObject.GetComponent<Entity>();
-
+        FindObjectOfType<AudioManager>().Play("RiplingWater");
         Thing.SpeedModifier += slowingamount;
     }
 
